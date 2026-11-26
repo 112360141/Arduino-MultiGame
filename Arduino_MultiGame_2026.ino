@@ -1,7 +1,3 @@
-// Arduino 多功能互動遊戲機｜整理版範例（依高中原始程式重構）
-// IMPORTANT: this is a cleaned reconstruction, not the exact historical source.
-// Target: Arduino Mega 2560 (pins 31-44 and pin 13 are used)
-// LCD library: LiquidCrystal_I2C; adjust address if needed.
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
@@ -45,8 +41,7 @@ void showScore() {
 }
 bool pressed(byte index) { return digitalRead(BUTTON_PINS[index]) == LOW; }
 Mode readMode() {
-  // MODE_PINS require external resistors if using INPUT as in the old project.
-  // Here we use INPUT_PULLUP assuming each switch connects to GND when active.
+
   for(byte i=0;i<5;i++) if(digitalRead(MODE_PINS[i])==LOW) return (Mode)(i+1);
   return mode;
 }
@@ -85,12 +80,12 @@ void playWhack() {
   if(litIndex>=0 && pressed(litIndex)){
     digitalWrite(LED_PINS[litIndex],LOW);
     score++; showScore();beep(NOTES[6]);litIndex=-1;
-    delay(70); // Basic debounce; can be replaced by edge detection.
+    delay(70); 
   }
 }
 void playPiano() {
   int active=-1;
-  // Preserve old code behavior: highest index takes priority.
+
   for(int i=8;i>=0;i--) if(pressed(i)){active=i;break;}
   allLedsOff();
   if(active<0){noTone(BUZZER_PIN);beeping=false;return;}
