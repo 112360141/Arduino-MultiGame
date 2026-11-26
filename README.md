@@ -33,7 +33,8 @@
 - 蜂鳴器：GPIO 13
 
 ## 程式版本說明
-`Arduino_MultiGame.ino` 為**根據當年留存的原始程式所整理的重構示範版**，並非當年的逐字原始碼，部分流程（例如按鈕去彈跳、模式切換、記憶遊戲時序）已重整。
+`Arduino_MultiGame.ino` 為逐字原始碼
+`Arduino_MultiGame_2026.ino`為修正版 
 ## 安裝與測試
 1. Arduino IDE 安裝 `LiquidCrystal_I2C` 相容函式庫。
 2. 選擇相符的 Arduino Mega 系列控制板並連接實際硬體。
