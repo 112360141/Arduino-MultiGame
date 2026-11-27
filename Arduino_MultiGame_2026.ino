@@ -1,7 +1,4 @@
-// Arduino 多功能互動遊戲機｜整理版範例（依高中原始程式重構）
-// IMPORTANT: this is a cleaned reconstruction, not the exact historical source.
-// Target: Arduino Mega 2560 (pins 31-44 and pin 13 are used)
-// LCD library: LiquidCrystal_I2C; adjust address if needed.
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
